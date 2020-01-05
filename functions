@@ -112,6 +112,7 @@ rds-db-instances
 region
 region-each
 regions
+skimstdin
 stack-arn
 stack-asg-instances
 stack-asgs
