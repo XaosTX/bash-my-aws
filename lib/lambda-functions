@@ -15,7 +15,7 @@ lambda-functions() {
   local filters=$(__bma_read_filters $@)
 
   local column_command
-  if column --help | grep -- --table-right > /dev/null; then
+  if column --help 2>/dev/null | grep -- --table-right > /dev/null; then
     column_command='column --table --table-right 3,4'
   else
     column_command='column -t'
@@ -47,7 +47,7 @@ lambda-function-memory(){
   [[ -z "$function_names" ]] && __bma_usage "function [function]" && return 1
 
   local column_command
-  if column --help | grep -- --table-right > /dev/null; then
+  if column --help 2>/dev/null | grep -- --table-right > /dev/null; then
     column_command='column --table --table-right 2'
   else
     column_command='column -t'
@@ -112,7 +112,7 @@ lambda-function-memory-step(){
   [[ -z "${function_names}" && -t 0 ]] && __bma_usage $usage_msg && return 1
 
   echo "You are about to step memory for following functions:"
-  echo $function_names | lambda-functions
+  echo "$function_names" | tr ' ' "\n" | lambda-functions
   [ -t 0 ] || exec </dev/tty # reattach keyboard to STDIN
   local regex_yes="^[Yy]$"
   read -p "Are you sure you want to continue? " -n 1 -r

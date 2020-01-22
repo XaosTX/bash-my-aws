@@ -1,8 +1,14 @@
-The project provides over 120 commands but fear not, much has been done
-to make them *discoverable*, *memorable* and hopefully in many cases *obvious*.
+title: Bash-my-AWS Command Reference
+description: Command reference for Bash-my-AWS - CLI Tools for AWS.
+    Bash-my-AWS provides short memorable commands for managing resources
+    in Amazon Web Services.
+
+Bash-my-AWS provides over 120 commands for managing AWS Resources but fear not!
+
+Effort has been put into making them *discoverable*, *memorable* and hopefully in most
+cases *obvious*.
 
 The reference material below is all extracted from the source of the commands.
-While not necessary to use the commands. Be curious. Read the source. :-)
 
 Lists in this project are alphabetised except where it makes sense not to.
 The first few sets of commands were chosen because they are likely to be of
@@ -24,6 +30,20 @@ the most interest to readers.
 
 
 ## aws-account-commands
+
+
+### aws-accounts
+
+List AWS Accounts in an [Organization](https://aws.amazon.com/organizations/)
+
+   $ aws-accounts
+   089834043791  ACTIVE  INVITED  1488257653.638  mike-aws@bailey.net.au
+   812094344564  ACTIVE  CREATED  1537922950.972  mike-bash-my-aws@bailey.net.au
+   001721147249  ACTIVE  INVITED  1548752330.723  mike@bailey.net.au
+   867077406134  ACTIVE  CREATED  1557910982.885  mike-deleteme@bailey.net.au
+   892345420873  ACTIVE  CREATED  1557911243.358  mike-delete@bailey.net.au
+
+*Optionally provide a filter string for a `| grep` effect with tighter columisation:*
 
 
 ### aws-account-alias
@@ -324,7 +344,7 @@ Delete a CloudFormation Stack
     |  2019-12-21T13:14:07.820Z|  asg-prod            |  AWS::CloudFormation::Stack             |  UPDATE_COMPLETE                      |
     |  2019-12-21T13:18:06.709Z|  asg-prod            |  AWS::CloudFormation::Stack             |  DELETE_IN_PROGRESS                   |
     |  2019-12-21T13:18:08.931Z|  AutoScalingGroup    |  AWS::AutoScaling::AutoScalingGroup     |  DELETE_IN_PROGRESS                   |
-    
+
     An error occurred (ValidationError) when calling the DescribeStackEvents operation: Stack [asg-prod] does not exist
 *Note that the error reported at the end of `stack-delete` command is just AWSCLI saying it can't find the stack anymore.*
 

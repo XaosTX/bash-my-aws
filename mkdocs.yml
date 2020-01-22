@@ -1,5 +1,8 @@
 site_name: 'Bash-my-AWS'
-site_description: 'CLI Commands for Managing AWS Resources'
+site_description:
+    Bash-my-AWS is a simple but powerful set of CLI commands for managing
+    resources on Amazon Web Services. They harness the power of Amazon's AWSCLI,
+    while abstracting away verbosity.
 site_author: 'Mike Bailey'
 site_url: 'https://bash-my-aws.org/'
 google_analytics: ['UA-154550647-1', 'bash-my-aws.org']
@@ -8,8 +11,9 @@ nav:
   - Home: index.md
   # - Tour: tour.md
   - Command Reference: command-reference.md
+  - Pipe-Skimming: pipe-skimming.md
   - CloudFormation Naming: cloudformation-naming.md
-  - LinuxConf 2020: linuxconf2020.md
+  - LCA 2020 Video: linuxconf2020.md
 
 theme:
   name: material
@@ -25,6 +29,7 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
+  - meta
 
 
 
